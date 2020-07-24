@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>演示文档</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h3>动态创建表格1</h3>
+行数 <input type="text" value="5" id="rows">
+列数 <input type="text" value="5" id="cols">
+<input type="button" value="创建表格" onclick="creatTab()">
+<div id="div1">
+
+</div>
+<script>
+    // function creatTab() {
+    //    rows = document.getElementById("rows").value;
+    //    cols = document.getElementById("cols").value;
+    //    div1 = document.getElementById("div1");
+    //    var tab = "<table border=1 width='500'>";
+    //    for(var i=0;i<rows;i++){
+    //        tab += '<tr>';
+    //        for(var j=0;j<cols;j++){
+    //            tab += "<td border=1 style = 'background:green'>"+i+j+"</td>"
+    //        }
+    //        tab += '</tr>';
+    //    }
+    //     tab += "</table>";
+    //    div1.innerHTML = tab;
+    // }
+    function creatTab(){
+        rows=document.getElementById('rows').value
+        cols=document.getElementById('cols').value
+        div1=document.getElementById('div1');
+        var ta=div1.getElementsByTagName('table')[0]
+        if (ta) {ta.parentNode.removeChild(ta)}
+        var tab = document.createElement("table");
+        tab.width=500;
+        tab.border=2;
+        for(var i=0;i<rows;i++){
+            tab.insertRow(i);
+            for(var j=0;j<cols;j++){
+                tab.rows[i].insertCell(j).innerHTML=i+''+j;
+                tab.rows[i].cells[j].style.background='green'
+            }
+        }
+        document.getElementById("div1").appendChild(tab);
+
+</script>
+</body>
+</html>
+//https://www.cnblogs.com/Renyi-Fan/p/9134967.html
