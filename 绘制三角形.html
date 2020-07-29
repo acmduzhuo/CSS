@@ -7,6 +7,14 @@
 <body>
 <!--http://www.360doc.com/content/12/0327/13/8674_198243134.shtml-->
 <style>
+    .trangle{
+        width: 0px;
+        height: 0px;
+        border-top: 100px solid red;
+        border-bottom: 100px solid black;
+        border-left: 100px solid yellow;
+        border-right: 100px solid blue;
+    }
     .trangle1{
         width: 0px;
         height: 0px;
@@ -87,17 +95,43 @@
         background-color: red;
         border-radius: 50px;
     }
+    .curvedarrow{
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 9px solid transparent;
+        border-right: 9px solid red;
+        -webkit-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+    }
+    .curvedarrow:after{
+        content: "";
+        position: absolute;
+        border: 0 solid transparent;
+        border-top: 3px solid red;
+        border-radius: 20px 0 0 0;
+        top: -12px;
+        left: -9px;
+        width: 12px;
+        height: 12px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
 </style>
-<div class="trangle1"></div>
-<div class="trangle2"></div>
-<div class="trangle3"></div>
-<div class="trangle4"></div>
-<div class="trangle5"></div>
-<div class="trangle6"></div>
-<div class="trangle7"></div>
-<div class="trangle8"></div>
+<!--<div class="trangle"></div>-->
+<!--<div class="trangle1"></div>-->
+<!--<div class="trangle2"></div>-->
+<!--<div class="trangle3"></div>-->
+<!--<div class="trangle4"></div>-->
+<!--<div class="trangle5"></div>-->
+<!--<div class="trangle6"></div>-->
+<!--<div class="trangle7"></div>-->
+<!--<div class="trangle8"></div>-->
 <div class="rectangle"></div>
 <div class="square"></div>
 <div class="circle"></div>
+<div class="curvedarrow"></div>
 </body>
 </html>
